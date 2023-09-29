@@ -1,0 +1,54 @@
+--Resposta do Comando SQL item a)
+
+SELECT 
+       A.CD_CATEGORIA,
+       A.DS_CATEGORIA,
+       A.TP_CATEGORIA,
+       B.CD_PRODUTO,
+       B.DS_PRODUTO,
+       B.VL_UNITARIO,
+       B.TP_EMBALAGEM,
+       B.VL_PERC_LUCRO
+FROM MC_CATEGORIA_PROD A LEFT JOIN MC_PRODUTO B
+     ON (A.CD_CATEGORIA = B.CD_CATEGORIA)
+ORDER BY CD_CATEGORIA, DS_PRODUTO ASC;  
+
+--Resposta do Comando SQL item b)
+
+SELECT A.NR_CLIENTE,
+       A.NM_CLIENTE,
+       A.DS_EMAIL,
+       A.NR_TELEFONE,
+       A.NM_LOGIN,
+       B.DT_NASCIMENTO,
+       to_char(B.DT_NASCIMENTO, 'Day') AS dia_da_semana_nascimento,
+       TRUNC(MONTHS_BETWEEN(SYSDATE, B.DT_NASCIMENTO)/12) AS anos_de_vida,
+       B.FL_SEXO_BIOLOGICO,
+       B.NR_CPF
+FROM MC_CLIENTE A INNER JOIN MC_CLI_FISICA B
+    ON (A.NR_CLIENTE = B.NR_CLIENTE);
+
+--Resposta do Comando SQL item c)
+
+SELECT A.NR_CLIENTE,
+       A.NM_CLIENTE,
+       A.DS_EMAIL,
+       A.NR_TELEFONE,
+       A.NM_LOGIN,
+       B.DT_FUNDACAO,
+       to_char(B.DT_FUNDACAO, 'Day') as dia_da_semana_fundacao,
+       TRUNC(MONTHS_BETWEEN(SYSDATE, B.DT_FUNDACAO)/12) AS anos_de_vida,
+       B.NR_CNPJ
+FROM MC_CLIENTE A INNER JOIN MC_CLI_JURIDICA B
+    ON (A.NR_CLIENTE = B.NR_CLIENTE);
+    
+--Resposta do Comando SQL item d)
+
+SELECT 
+       B.CD_PRODUTO,  
+       A.DS_PRODUTO,
+       B.DT_VISUALIZACAO, 
+       B.NR_HORA_VISUALIZACAO
+FROM MC_PRODUTO A INNER JOIN MC_SGV_VISUALIZACAO_VIDEO B
+    ON (A.CD_PRODUTO = B.CD_PRODUTO)
+    ORDER BY DT_VISUALIZACAO, NR_HORA_VISUALIZACAO;
