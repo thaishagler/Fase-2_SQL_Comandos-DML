@@ -1,8 +1,12 @@
 # Comandos DML e DQL - Manipulando Banco de Dados Relacionais
 Manipulando banco de dados relacionais com instruções SQL - PBL
 
-Neste repositório foram aplicados conhecimentos em instruções DML (Data Manipulation Language) no contexto do projeto Melhores Compras, um e-commerce fictício. O objetivo é cadastrar informações relevantes que serão usadas pelas áreas de negócio da organização.
+Neste repositório foram cadastrados novos dados no banco de dados do e-commerce Melhores Compras, podendo ser visto em: Arquivo_1_2_comandos_DML.sql
+Também foram usados comandos para consultar e recuperar dados, visto em: Arquivo_1_3_comandos_DQL.sql
 
+* Comandos DML (Data Manipulation Language),
+* Comandos DQL (Data Query Language).
+  
 ## Tópicos Estudados
 Aqui estão os tópicos estudados durante o desenvolvimento deste projeto e dentro da Fase 2, do curso de Data Science da FIAP.
 
